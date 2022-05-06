@@ -1,5 +1,3 @@
-type stringPair = [string, string];
-
 abstract class ElementBase extends HTMLElement {
     // Derived class constructor must call super("IDofTemplateHTML") first.
     constructor(templateID: string) {

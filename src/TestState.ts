@@ -4,6 +4,7 @@ class TestState extends StateBase {
     constructor() {
         super();
         this.texty = "";
+        this.numbery = 0;
     }
 
     @WatchProperty
