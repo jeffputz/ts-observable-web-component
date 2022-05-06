@@ -5,6 +5,8 @@
     "sourceMap": true,
     "outFile": "dist/test.js",
     "experimentalDecorators": true,
-    "watch": true
+    "watch": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true
   }
 }

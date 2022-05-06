@@ -39,5 +39,5 @@ abstract class ElementBase extends HTMLElement {
     }
 
     // Use this.shadowRoot in the implementation to manipulate the DOM as needed in response to the new data.
-    abstract updateUI(data: any);
+    abstract updateUI(data: any): void;
 }
