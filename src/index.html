@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TypeScript Hello Web</title>
+    <style>
+        body {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="dist/test.js"></script>
+    <script>
+        var state = new TestState();
+
+        customElements.define('pf-test', TestElement);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            state.subscribe("texty", () => {
+                console.log("Call me for texty!");
+            });
+            state.subscribe("numbery", () => {
+                console.log("anon call for numbery");
+            });
+            state.texty = "first change";
+            state.numbery = 42;
+            state.texty = "second change!";
+            state.numbery = 123;
+        });
+    </script>
+
+    <template id="pf-test">
+        <div>
+            <h1>original</h1>
+        </div>
+    </template>
+
+    <pf-test caller="state.texty">
+    </pf-test>
+    <pf-test caller="state.numbery">
+    </pf-test>
+</body>
+
+</html>
