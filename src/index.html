@@ -17,6 +17,7 @@
         var state = new TestState();
 
         customElements.define('pf-test', TestElement);
+        customElements.define('pf-userbit', UserBitElement);
 
         document.addEventListener("DOMContentLoaded", () => {
             state.subscribe("texty", () => {
@@ -29,6 +30,7 @@
             state.numbery = 42;
             state.texty = "second change!";
             state.numbery = 123;
+            state.is = true;
         });
     </script>
 
@@ -42,6 +44,15 @@
     </pf-test>
     <pf-test caller="state.numbery">
     </pf-test>
+
+    <pf-userbit caller="state.is">
+        <div slot="in">
+            <p>this is in</p>
+        </div>
+        <div slot="out">
+            <p>OUT OUT OUT</p>
+        </div>
+    </pf-userbit>
 </body>
 
 </html>

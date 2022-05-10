@@ -2,6 +2,8 @@ abstract class ElementBase extends HTMLElement {
     // Derived class constructor must call super("IDofTemplateHTML") first.
     constructor(templateID: string) {
         super();
+        if (templateID == null)
+            return;
         this.attachShadow({ mode: 'open' });
         var el = document.getElementById(templateID) as HTMLTemplateElement;
         if (!el)
@@ -18,6 +20,7 @@ abstract class ElementBase extends HTMLElement {
         const state = window[varAndProp[0]];
         const delegate = this.update.bind(this);
         state.subscribe(varAndProp[1], delegate);
+        this.update();
     }
 
     update() {

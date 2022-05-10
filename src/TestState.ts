@@ -12,4 +12,7 @@ class TestState extends StateBase {
 
     @WatchProperty
     numbery: number;
+
+    @WatchProperty
+    is: boolean;
 }
